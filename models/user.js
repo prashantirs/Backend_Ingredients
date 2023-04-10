@@ -2,9 +2,20 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     name:String,
-    email:String,
+    email:{
+        type:String,
+        unique:true,
+        required:true,
+    },
+    password:{
+        type:String,
+        select:false, //this will not show password in response when we get user
+        required:true,
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now,
+    }
 });
 
-const User = mongoose.model("User", userSchema);
-
-export default User;
+export const User = mongoose.model("User", userSchema);

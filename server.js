@@ -1,8 +1,8 @@
-import app from './app.js';
-import connectDB from './database/db.js';
+import app from "./app.js";
+import connectDB from "./database/db.js";
 
 connectDB();
 
-app.listen(process.env.PORT,()=>{
-    console.log(`Server is running on port ${process.env.PORT}`);
-})
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT}`);
+});
