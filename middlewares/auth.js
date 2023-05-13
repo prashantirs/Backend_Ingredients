@@ -9,6 +9,7 @@ export const isAuthenticated = async (req, res, next) => {
       message: "Login First",
     });
   }
+
   const { id } = jwt.verify(token, process.env.JWT_SECRET);
   req.user = await User.findById(id); //saving user in request object
   next();

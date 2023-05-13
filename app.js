@@ -14,8 +14,9 @@ dotenv.config({path:'./database/config.env'});
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
+
 app.use(cors({  
-    origin:[[process.env.FRONTEND_URL1],[process.env.FRONTEND_URL2]],
+    origin:[["https://frontend-ingredients.vercel.app"],["http://127.0.0.1:5173"],["http://localhost:5173"]],
     methods:['GET','POST','PUT','DELETE'],
     credentials:true,
 }));
